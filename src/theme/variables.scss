@@ -2,7 +2,20 @@
 // http://ionicframework.com/docs/theming/
 
 /** Ionic CSS Variables **/
+* {
+  font-family: "nunito-regular";
+}
+
 :root {
+  .ion-color-subscribe-btn {
+    background-color: #fff !important;
+    color: var(--ion-color-primary);
+    font-size: var(--ion-size20) !important;
+    border-radius: 15px;
+    box-shadow: 4px 4px 0px -1px #896af9;
+    border: 1px solid #896af9;
+  }
+
   /** primary **/
   --ion-color-primary: #ab95f9;
   --ion-color-primary-rgb: 56, 128, 255;

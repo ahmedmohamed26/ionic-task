@@ -1,21 +1,43 @@
 <app-header></app-header>
-<ion-content [fullscreen]="true" class="ion-padding">
-  <!-- <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header> -->
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
+<ion-content [fullscreen]="true">
+  <section class="subscribe ion-padding">
+    <h2>Discover the magic of out surprise box</h2>
     <p>
-      Start with Ionic
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://ionicframework.com/docs/components"
-        >UI Components</a
-      >
+      Unleash your child's curiosity with our educational subscription box
+      filled with fun and learning.
     </p>
-  </div>
+    <ion-button color="subscribe-btn" class="subscribe-btn" size="large"
+      >subscribe now</ion-button
+    >
+    <ion-img
+      src="assets/images/subscribe-image.png"
+      alt="Subscribe Now"
+      class="subscribe-image"
+    ></ion-img>
+  </section>
+
+  <section class="discover ion-padding">
+    <h6>discover</h6>
+    <h2>How It Works: Subscribe and Receive Your Surprise Box</h2>
+    <p>
+      Subscribe to our surprise subscription box and give your child the gift of
+      learning. Each month, we curate a box filled with educational materials
+      tailored to your child's age and interests.
+    </p>
+    <ion-list lines="none">
+      <ion-item
+        *ngFor="let item of discoverArr"
+        class="ion-text-center item-background-color"
+      >
+        <ion-label class="ion-text-wrap">
+          <ion-icon [src]="item?.icon"></ion-icon>
+          <h5>{{item?.title}}</h5>
+          <p>{{item?.des}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-button color="subscribe-btn" class="subscribe-btn" size="large"
+      >subscribe now</ion-button
+    >
+  </section>
 </ion-content>
