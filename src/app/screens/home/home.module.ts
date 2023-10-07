@@ -9,13 +9,7 @@ import { HeaderModule } from 'src/app/shared/components/header/header.module';
 import { SharedModule } from 'src/app/shared/modules/shared/shared.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    HomePageRoutingModule,
-    SharedModule,
-  ],
+  imports: [CommonModule, IonicModule, HomePageRoutingModule, SharedModule],
   declarations: [HomePage],
 })
 export class HomePageModule {}

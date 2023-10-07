@@ -1,3 +1,53 @@
-<p>
-  footer works!
-</p>
+<ion-footer>
+  <ion-title> Logo </ion-title>
+
+  <ion-list lines="none">
+    <ion-item *ngFor="let link of links">
+      <a href="{{ link?.path }}">{{ link?.name }}</a>
+    </ion-item>
+  </ion-list>
+
+  <form
+    [formGroup]="subscribeForm"
+    (ngSubmit)="submitForm()"
+    class="ion-padding"
+    novalidate
+  >
+    <ion-label>Subscribe</ion-label>
+    <ion-input
+      placeholder="Enter your email"
+      type="email"
+      formControlName="email"
+      aria-label="Email"
+    ></ion-input>
+
+    <div
+      *ngIf="
+        (subscribeForm.get('email')?.invalid &&
+          subscribeForm.get('email')?.touched) ||
+        (subscribeForm.get('email')?.untouched && isSubmitted)
+      "
+    >
+      <div
+        class="error ion-padding"
+        *ngIf="subscribeForm.controls['email']?.errors?.['required']"
+      >
+        <ion-text color="danger">Email is required.</ion-text>
+      </div>
+      <div
+        class="ion-padding"
+        *ngIf="subscribeForm.controls['email']?.errors?.['email']"
+      >
+        <ion-text color="danger">Please provide valid email.</ion-text>
+      </div>
+    </div>
+    <ion-button
+      expand="full"
+      class="btn-subscribe"
+      type="submit"
+      [disabled]="!subscribeForm.valid"
+    >
+      Subscribe
+    </ion-button>
+  </form>
+</ion-footer>
