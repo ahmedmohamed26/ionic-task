@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Discover } from 'src/app/shared/interfaces/home';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  discoverArr: any = [
+  discoverArr: Discover[] = [
     {
       icon: 'assets/icon/subscribe.svg',
       title: 'Step 1: Subscribe',
