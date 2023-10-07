@@ -59,10 +59,6 @@ export class FooterComponent implements OnInit {
     });
   }
 
-  get errorControl() {
-    return this.subscribeForm.controls;
-  }
-
   submitForm() {
     this.isSubmitted = true;
     if (this.subscribeForm.valid) {

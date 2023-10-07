@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Discover } from 'src/app/shared/interfaces/home';
 
 @Component({
@@ -24,5 +25,9 @@ export class HomePage {
       des: 'Sit back and relax as your child eagerly awaits the arrival of their monthly surprise box filled with engaging learning materials.',
     },
   ];
-  constructor() {}
+  constructor(private router: Router) {}
+
+  goToSubPage() {
+    this.router.navigate(['/subscribe']);
+  }
 }

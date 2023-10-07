@@ -1,0 +1,52 @@
+.wrapper-section {
+  border: 1px solid #d0d5dd;
+  border-radius: 20px;
+  margin-top: 40px;
+}
+.title {
+  padding: 2rem 1rem;
+  position: relative;
+  ion-title {
+    padding: 0;
+    font-size: var(--ion-size22);
+    font-weight: 700;
+  }
+  ion-text {
+    font-size: var(--ion-size16);
+    font-weight: 400;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 5px;
+    margin: auto;
+    width: calc(100% - 30px);
+    height: 1px;
+    background-color: #ddd;
+  }
+}
+
+.subscribe-form {
+  position: relative;
+  ion-title {
+    padding: 0;
+    font-size: var(--ion-size22);
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  ion-label {
+    font-size: var(--ion-size14);
+    font-weight: 500;
+  }
+  ion-input {
+    border: solid 1px #ddd;
+    border-radius: 10px;
+    text-indent: 10px;
+    margin-top: 12px;
+  }
+  .input-field {
+    margin-bottom: 1.6rem;
+  }
+}

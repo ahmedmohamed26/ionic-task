@@ -15,6 +15,10 @@ const routes: Routes = [
       },
     ],
   },
+  {
+    path: 'subscribe',
+    loadChildren: () => import('./screens/subscribe/subscribe.module').then( m => m.SubscribePageModule)
+  },
 ];
 
 @NgModule({

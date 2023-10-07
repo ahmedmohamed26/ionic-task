@@ -1,0 +1,58 @@
+<app-header></app-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="wrapper-section">
+    <section class="title">
+      <ion-title>Subscribe</ion-title>
+      <ion-text>to our Monthly Surprise Box</ion-text>
+    </section>
+
+    <form
+      [formGroup]="subscribeForm"
+      (ngSubmit)="submitForm()"
+      class="ion-padding subscribe-form"
+      novalidate
+    >
+      <div class="contact-info">
+        <ion-title>Contact Information</ion-title>
+        <div class="input-field">
+          <ion-label>Your Name</ion-label>
+          <ion-input
+            placeholder="e.g Osama Alshathri"
+            type="text"
+            formControlName="name"
+            aria-label="name"
+          ></ion-input>
+        </div>
+        <div class="input-field">
+          <ion-label>Email</ion-label>
+          <ion-input
+            placeholder="Osama@gmail.com"
+            type="email"
+            formControlName="email"
+            aria-label="Email"
+          ></ion-input>
+        </div>
+      </div>
+
+      <div class="Child-info">
+        <ion-title>Child’s Information</ion-title>
+        <div class="input-field">
+          <ion-label>Child’s Full Name</ion-label>
+          <ion-input
+            placeholder="e.g Sarah Mohammad"
+            type="text"
+            formControlName="name"
+            aria-label="name"
+          ></ion-input>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">subscribe</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+  <!-- <app-footer></app-footer> -->
+</ion-content>
