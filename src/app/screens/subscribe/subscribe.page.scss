@@ -46,7 +46,106 @@
     text-indent: 10px;
     margin-top: 12px;
   }
-  .input-field {
-    margin-bottom: 1.6rem;
+  ion-select {
+    border: solid 1px #ddd;
+    border-radius: 10px;
+    text-indent: 10px;
+    margin-top: 10px;
+  }
+  ion-checkbox {
+    border: solid 1px #ddd;
+    border-radius: 10px;
+    text-indent: 10px;
+    margin-top: 10px;
+    width: 100%;
+    padding: 15px 5px;
+  }
+  .child-info {
+    .input-field {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .summary {
+    background-color: #f1edfe;
+    .summary-box {
+      background-color: #fff;
+      border-radius: 5px;
+      margin: 1.5rem 0 0 0;
+      h6 {
+        font-size: var(--ion-size16);
+        font-weight: 700;
+        margin: 0;
+        span {
+          font-weight: 400;
+        }
+      }
+      p {
+        color: #838383;
+        font-size: var(--ion-size16);
+        font-weight: 400;
+        margin: 0;
+      }
+    }
+    .taxes {
+      margin-top: 1.5rem;
+      position: relative;
+
+      h6 {
+        font-size: var(--ion-size14);
+        font-weight: 400;
+        margin: 0;
+        span {
+          font-weight: 400;
+        }
+      }
+      h5 {
+        font-size: var(--ion-size14);
+        font-weight: 600;
+        margin: 0;
+        span {
+          font-weight: 400;
+        }
+      }
+      p {
+        color: #707070;
+        font-size: var(--ion-size14);
+        font-weight: 400;
+        margin: 0;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -15px;
+        margin: auto;
+        width: calc(100% - 30px);
+        height: 1px;
+        background-color: #ddd;
+      }
+    }
+    .total {
+      margin-top: 1rem;
+      h6 {
+        font-size: var(--ion-size17);
+        font-weight: 700;
+        span {
+          font-weight: 400;
+        }
+      }
+      h5 {
+        font-size: var(--ion-size17);
+        font-weight: 600;
+        span {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+  .subscribe-btn {
+    margin-top: 1.5rem;
+    font-size: var(--ion-size20);
+    font-weight: 900;
   }
 }
