@@ -49,5 +49,20 @@
     >
       Subscribe
     </ion-button>
+    <ion-text
+      >By subscribing you agree to with our <a>Privacy Policy</a></ion-text
+    >
   </form>
+  <section class="footer-pages">
+    <ion-list lines="none">
+      <ion-item *ngFor="let item of pagesLink">
+        <a (click)="goToPage(item?.bath)">{{ item?.name }}</a>
+      </ion-item>
+    </ion-list>
+    <div class="copy-right">
+      <ion-text class="ion-padding"
+        >© {{ year }} Relume. All rights reserved.</ion-text
+      >
+    </div>
+  </section>
 </ion-footer>

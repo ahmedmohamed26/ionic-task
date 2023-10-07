@@ -19,6 +19,7 @@ ion-footer {
     }
   }
   form {
+    position: relative;
     ion-label {
       font-size: var(--ion-size16);
       font-weight: 600;
@@ -33,7 +34,43 @@ ion-footer {
       --color: #000;
       height: 60px;
       border: 1px solid #000;
-      margin-top: 1rem;
+      margin: 1rem 0;
+      font-size: var(--ion-size16);
+      font-weight: 400;
+    }
+    ion-text {
+      color: #000;
+      font-size: var(--ion-size14);
+      font-weight: 400;
+      a {
+        color: #000;
+        text-decoration: underline;
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -15px;
+      margin: auto;
+      width: calc(100% - 30px);
+      height: 1px;
+      background-color: #000;
+    }
+  }
+  .footer-pages {
+    margin-top: 2rem;
+    ion-list {
+      ion-item {
+        a {
+          color: #000;
+          text-decoration: underline;
+        }
+      }
+    }
+    .copy-right {
+      margin-top: 1.5rem;
       font-size: var(--ion-size16);
       font-weight: 400;
     }

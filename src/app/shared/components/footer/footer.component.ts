@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -9,7 +10,21 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class FooterComponent implements OnInit {
   subscribeForm: FormGroup = new FormGroup({});
   isSubmitted: boolean = false;
-
+  year = new Date().getFullYear();
+  pagesLink: any = [
+    {
+      name: 'Privacy Policy',
+      path: '',
+    },
+    {
+      name: 'Terms of Service',
+      path: '',
+    },
+    {
+      name: 'Cookies Settings',
+      path: '',
+    },
+  ];
   links: any = [
     {
       name: 'link one',
@@ -32,7 +47,7 @@ export class FooterComponent implements OnInit {
       path: '',
     },
   ];
-  constructor(public formBuilder: FormBuilder) {}
+  constructor(public formBuilder: FormBuilder, private router: Router) {}
 
   ngOnInit() {
     this.initForm();
@@ -56,5 +71,9 @@ export class FooterComponent implements OnInit {
       this.isSubmitted = false;
       return console.log('Please provide all the required values!');
     }
+  }
+
+  goToPage(path: string) {
+    this.router.navigate([`/${path}`]);
   }
 }
