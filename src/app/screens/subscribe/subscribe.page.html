@@ -274,6 +274,27 @@
                     </div>
                   </ion-row>
                 </div>
+                <ion-row>
+                  <ion-col>
+                    <div class="input-field topics">
+                      <h2>As a parent select any 3 topics</h2>
+                      <ion-row>
+                        <ion-col
+                          size="4"
+                          *ngFor="let topic of topics"
+                          (click)="selectTopic(topic)"
+                        >
+                          <div
+                            class="topic"
+                            [ngClass]="{'selected-topics': selectedTopics.includes(topic)}"
+                          >
+                            <span> {{topic}} </span>
+                          </div></ion-col
+                        >
+                      </ion-row>
+                    </div>
+                  </ion-col>
+                </ion-row>
               </div>
             </div></ion-col
           >

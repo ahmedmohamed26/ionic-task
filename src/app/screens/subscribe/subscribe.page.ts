@@ -27,6 +27,8 @@ export class SubscribePage implements OnInit {
   ];
   years: number[] = [];
   grades: string[] = ['grade 1', 'grade 2', 'grade 3', 'grade 4', 'grade 5'];
+  topics: string[] = ['Arabic', 'Islamic', 'English', 'History', 'Sports'];
+  selectedTopics: string[] = [];
   constructor(public formBuilder: FormBuilder, private router: Router) {}
 
   ngOnInit() {
@@ -44,6 +46,7 @@ export class SubscribePage implements OnInit {
       year: ['', Validators.required],
       grade: ['', Validators.required],
       gender: ['', Validators.required],
+      topics: [[], [Validators.required, , Validators.minLength(3)]],
       boy: [false],
       girl: [false],
     });
@@ -51,12 +54,8 @@ export class SubscribePage implements OnInit {
 
   submitForm() {
     this.isSubmitted = true;
-    if (
-      this.subscribeForm.valid &&
-      (this.subscribeForm.get('boy')?.value ||
-        this.subscribeForm.get('girl')?.value)
-    ) {
-      this.getGender();
+
+    if (this.subscribeForm.valid) {
       let dataForm = this.subscribeForm.value;
       delete dataForm.boy;
       delete dataForm.girl;
@@ -81,6 +80,7 @@ export class SubscribePage implements OnInit {
     type === 'boy'
       ? this.subscribeForm.get('girl')?.setValue(false)
       : this.subscribeForm.get('boy')?.setValue(false);
+    this.getGender();
   }
 
   getGender() {
@@ -89,5 +89,16 @@ export class SubscribePage implements OnInit {
     } else if (this.subscribeForm.get('girl')?.value === true) {
       this.subscribeForm.get('gender')?.setValue('girl');
     }
+  }
+
+  selectTopic(topic: string) {
+    if (this.selectedTopics.includes(topic)) {
+      this.selectedTopics = this.selectedTopics.filter(
+        (item: string) => item != topic
+      );
+    } else {
+      this.selectedTopics.push(topic);
+    }
+    this.subscribeForm.get('topics')?.setValue(this.selectedTopics);
   }
 }

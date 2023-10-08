@@ -153,4 +153,30 @@
     font-weight: 900;
     display: block;
   }
+
+  .topics {
+    ion-row {
+      margin-top: 20px;
+    }
+    h2 {
+      font-size: var(--ion-size20);
+      font-weight: 700;
+    }
+    .topic {
+      color: #667085;
+      border: 1px solid #e1e3e6;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+      padding: 7px 20px;
+      font-size: var(--ion-size17);
+      font-weight: 400;
+    }
+  }
+  .selected-topics {
+    border: 1px solid #63f !important;
+    background: #f4f1fe !important;
+    color: #6633ff !important;
+  }
 }
