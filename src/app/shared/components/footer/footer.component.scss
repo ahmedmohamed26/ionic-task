@@ -61,6 +61,7 @@ ion-footer {
   }
   .footer-pages {
     margin-top: 2rem;
+    position: relative;
     ion-list {
       ion-item {
         a {
@@ -73,6 +74,44 @@ ion-footer {
       margin-top: 1.5rem;
       font-size: var(--ion-size16);
       font-weight: 400;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -15px;
+      margin: auto;
+      width: calc(100% - 30px);
+      height: 1px;
+      background-color: #000;
+    }
+  }
+}
+@media (min-width: 500px) {
+  ion-footer {
+    .title,
+    .links,
+    form {
+      display: none !important;
+    }
+    .footer-pages {
+      display: flex !important;
+      width: 100%;
+      justify-content: space-between;
+    }
+    .pagesLink {
+      display: flex;
+    }
+  }
+}
+
+@media (max-width: 501px) {
+  ion-footer {
+    .footer-pages {
+      &::after {
+        display: none !important;
+      }
     }
   }
 }

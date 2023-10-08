@@ -20,33 +20,43 @@
     ></ion-img>
   </section>
 
-  <section class="discover ion-padding">
-    <h6>discover</h6>
-    <h2>How It Works: Subscribe and Receive Your Surprise Box</h2>
-    <p>
-      Subscribe to our surprise subscription box and give your child the gift of
-      learning. Each month, we curate a box filled with educational materials
-      tailored to your child's age and interests.
-    </p>
-    <ion-list lines="none">
-      <ion-item
-        *ngFor="let item of discoverArr"
-        class="ion-text-center item-background-color"
-      >
-        <ion-label class="ion-text-wrap">
-          <ion-icon [src]="item?.icon"></ion-icon>
-          <h5>{{item?.title}}</h5>
-          <p>{{item?.des}}</p>
-        </ion-label>
-      </ion-item>
-    </ion-list>
-    <ion-button
-      color="subscribe-btn"
-      class="subscribe-btn"
-      size="large"
-      (click)="goToSubPage()"
-      >subscribe now</ion-button
-    >
+  <section class="discover">
+    <div class="overlay center-section">
+      <h6>discover</h6>
+      <h2>How It Works: Subscribe and Receive Your Surprise Box</h2>
+      <p>
+        Subscribe to our surprise subscription box and give your child the gift
+        of learning. Each month, we curate a box filled with educational
+        materials tailored to your child's age and interests.
+      </p>
+
+      <div class="discover-service">
+        <ion-grid>
+          <ion-row>
+            <ion-col
+              *ngFor="let item of discoverArr"
+              size="12"
+              size-xl="4"
+              size-lg="4"
+              size-md="4"
+              class="ion-text-center item-background-color"
+            >
+              <ion-label class="ion-text-wrap">
+                <ion-icon [src]="item?.icon"></ion-icon>
+                <h5>{{item?.title}}</h5>
+                <p>{{item?.des}}</p>
+              </ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <div class="subscribe-btn">
+        <ion-button color="subscribe-btn" size="large" (click)="goToSubPage()"
+          >subscribe now</ion-button
+        >
+      </div>
+    </div>
   </section>
   <app-footer></app-footer>
 </ion-content>

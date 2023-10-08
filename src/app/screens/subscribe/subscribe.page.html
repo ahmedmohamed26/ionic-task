@@ -2,322 +2,345 @@
 
 <ion-content [fullscreen]="true" class="ion-padding">
   <div class="wrapper-section">
-    <section class="title">
-      <ion-title>Subscribe</ion-title>
-      <ion-text> to our Monthly Surprise Box </ion-text>
-    </section>
-
     <form
       [formGroup]="subscribeForm"
       (ngSubmit)="submitForm()"
       class="subscribe-form"
       novalidate
     >
-      <div class="contact-info ion-padding">
-        <ion-title>Contact Information</ion-title>
+      <ion-grid class="parent-grid">
         <ion-row>
-          <ion-col>
-            <div class="input-field">
-              <ion-label>Your Name</ion-label>
-              <ion-input
-                placeholder="e.g Osama Alshathri"
-                type="text"
-                formControlName="name"
-                aria-label="name"
-              ></ion-input>
-              <div
-                *ngIf="
-              (subscribeForm.get('name')?.invalid &&
-                subscribeForm.get('name')?.touched) ||
-              (subscribeForm.get('name')?.untouched && isSubmitted)
-            "
-              >
-                <div
-                  class="error"
-                  *ngIf="subscribeForm.controls['name']?.errors?.['required']"
-                >
-                  <ion-text color="danger">Name is required.</ion-text>
-                </div>
+          <ion-col class="ion-padding" col-12 col-xl-6 col-lg-6 col-md-6
+            ><div>
+              <section class="title">
+                <h2>Subscribe</h2>
+                <ion-text> to our Monthly Surprise Box </ion-text>
+              </section>
+              <div class="contact-info">
+                <h2>Contact Information</h2>
+                <ion-row>
+                  <ion-col>
+                    <div class="input-field">
+                      <ion-label>Your Name</ion-label>
+                      <ion-input
+                        placeholder="e.g Osama Alshathri"
+                        type="text"
+                        formControlName="name"
+                        aria-label="name"
+                      ></ion-input>
+                      <div
+                        *ngIf="
+                  (subscribeForm.get('name')?.invalid &&
+                    subscribeForm.get('name')?.touched) ||
+                  (subscribeForm.get('name')?.untouched && isSubmitted)
+                "
+                      >
+                        <div
+                          class="error"
+                          *ngIf="subscribeForm.controls['name']?.errors?.['required']"
+                        >
+                          <ion-text color="danger">Name is required.</ion-text>
+                        </div>
+                      </div>
+                    </div>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <div class="input-field">
+                      <ion-label>Email</ion-label>
+                      <ion-input
+                        placeholder="Osama@gmail.com"
+                        type="email"
+                        formControlName="email"
+                        aria-label="Email"
+                      ></ion-input>
+                      <div
+                        *ngIf="
+                    (subscribeForm.get('email')?.invalid &&
+                      subscribeForm.get('email')?.touched) ||
+                    (subscribeForm.get('email')?.untouched && isSubmitted)
+                  "
+                      >
+                        <div
+                          class="error"
+                          *ngIf="subscribeForm.controls['email']?.errors?.['required']"
+                        >
+                          <ion-text color="danger">Email is required.</ion-text>
+                        </div>
+                        <div
+                          *ngIf="subscribeForm.controls['email']?.errors?.['email']"
+                        >
+                          <ion-text color="danger"
+                            >Please provide valid email.</ion-text
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </ion-col>
+                </ion-row>
               </div>
-            </div>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            <div class="input-field">
-              <ion-label>Email</ion-label>
-              <ion-input
-                placeholder="Osama@gmail.com"
-                type="email"
-                formControlName="email"
-                aria-label="Email"
-              ></ion-input>
-              <div
-                *ngIf="
-                (subscribeForm.get('email')?.invalid &&
-                  subscribeForm.get('email')?.touched) ||
-                (subscribeForm.get('email')?.untouched && isSubmitted)
+
+              <div class="child-info">
+                <h2>Child’s Information</h2>
+                <ion-row>
+                  <ion-col>
+                    <div class="input-field">
+                      <ion-label>Child’s Full Name</ion-label>
+                      <ion-input
+                        placeholder="e.g Sarah Mohammad"
+                        type="text"
+                        formControlName="childName"
+                        aria-label="childName"
+                      ></ion-input>
+                      <div
+                        *ngIf="
+                (subscribeForm.get('childName')?.invalid &&
+                  subscribeForm.get('childName')?.touched) ||
+                (subscribeForm.get('childName')?.untouched && isSubmitted)
               "
-              >
-                <div
-                  class="error"
-                  *ngIf="subscribeForm.controls['email']?.errors?.['required']"
-                >
-                  <ion-text color="danger">Email is required.</ion-text>
-                </div>
-                <div
-                  class="ion-padding"
-                  *ngIf="subscribeForm.controls['email']?.errors?.['email']"
-                >
-                  <ion-text color="danger"
-                    >Please provide valid email.</ion-text
-                  >
-                </div>
-              </div>
-            </div>
-          </ion-col>
-        </ion-row>
-      </div>
+                      >
+                        <div
+                          class="error"
+                          *ngIf="subscribeForm.controls['childName']?.errors?.['required']"
+                        >
+                          <ion-text color="danger"
+                            >Child’s Full Name is required.</ion-text
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </ion-col>
+                </ion-row>
 
-      <div class="child-info ion-padding">
-        <ion-title>Child’s Information</ion-title>
-        <ion-row>
-          <ion-col>
-            <div class="input-field">
-              <ion-label>Child’s Full Name</ion-label>
-              <ion-input
-                placeholder="e.g Sarah Mohammad"
-                type="text"
-                formControlName="childName"
-                aria-label="childName"
-              ></ion-input>
-              <div
-                *ngIf="
-            (subscribeForm.get('childName')?.invalid &&
-              subscribeForm.get('childName')?.touched) ||
-            (subscribeForm.get('childName')?.untouched && isSubmitted)
-          "
-              >
-                <div
-                  class="error"
-                  *ngIf="subscribeForm.controls['childName']?.errors?.['required']"
-                >
-                  <ion-text color="danger"
-                    >Child’s Full Name is required.</ion-text
-                  >
-                </div>
-              </div>
-            </div>
-          </ion-col>
-        </ion-row>
-
-        <ion-row>
-          <ion-col>
-            <div class="input-field">
-              <ion-label> Child’s Date of Birth </ion-label>
-              <ion-row>
-                <ion-col>
-                  <ion-select placeholder="Date" formControlName="day">
-                    <ion-select-option *ngFor="let day of days" value="{{day}}">
-                      {{day}}
-                    </ion-select-option>
-                  </ion-select>
-                  <div
-                    *ngIf="
-              (subscribeForm.get('day')?.invalid &&
-                subscribeForm.get('day')?.touched) ||
-              (subscribeForm.get('day')?.untouched && isSubmitted)
+                <ion-row>
+                  <ion-col>
+                    <div class="input-field">
+                      <ion-label> Child’s Date of Birth </ion-label>
+                      <ion-row>
+                        <ion-col>
+                          <ion-select placeholder="Date" formControlName="day">
+                            <ion-select-option
+                              *ngFor="let day of days"
+                              value="{{day}}"
+                            >
+                              {{day}}
+                            </ion-select-option>
+                          </ion-select>
+                          <div
+                            *ngIf="
+                  (subscribeForm.get('day')?.invalid &&
+                    subscribeForm.get('day')?.touched) ||
+                  (subscribeForm.get('day')?.untouched && isSubmitted)
+                "
+                          >
+                            <div
+                              class="error"
+                              *ngIf="subscribeForm.controls['day']?.errors?.['required']"
+                            >
+                              <ion-text color="danger"
+                                >Date is required.</ion-text
+                              >
+                            </div>
+                          </div>
+                        </ion-col>
+                        <ion-col>
+                          <ion-select
+                            placeholder="Month"
+                            formControlName="month"
+                          >
+                            <ion-select-option
+                              *ngFor="let month of months"
+                              value="{{month}}"
+                            >
+                              {{month}}
+                            </ion-select-option>
+                          </ion-select>
+                          <div
+                            *ngIf="
+                (subscribeForm.get('month')?.invalid &&
+                  subscribeForm.get('month')?.touched) ||
+                (subscribeForm.get('month')?.untouched && isSubmitted)
+              "
+                          >
+                            <div
+                              class="error"
+                              *ngIf="subscribeForm.controls['month']?.errors?.['required']"
+                            >
+                              <ion-text color="danger"
+                                >Month is required.</ion-text
+                              >
+                            </div>
+                          </div>
+                        </ion-col>
+                        <ion-col>
+                          <ion-select placeholder="Year" formControlName="year">
+                            <ion-select-option
+                              *ngFor="let year of years"
+                              value="{{year}}"
+                            >
+                              {{year}}
+                            </ion-select-option>
+                          </ion-select>
+                          <div
+                            *ngIf="
+              (subscribeForm.get('year')?.invalid &&
+                subscribeForm.get('year')?.touched) ||
+              (subscribeForm.get('year')?.untouched && isSubmitted)
             "
-                  >
-                    <div
-                      class="error"
-                      *ngIf="subscribeForm.controls['day']?.errors?.['required']"
-                    >
-                      <ion-text color="danger">Date is required.</ion-text>
+                          >
+                            <div
+                              class="error"
+                              *ngIf="subscribeForm.controls['year']?.errors?.['required']"
+                            >
+                              <ion-text color="danger"
+                                >Year is required.</ion-text
+                              >
+                            </div>
+                          </div>
+                        </ion-col>
+                      </ion-row>
                     </div>
-                  </div>
-                </ion-col>
-                <ion-col>
-                  <ion-select placeholder="Month" formControlName="month">
-                    <ion-select-option
-                      *ngFor="let month of months"
-                      value="{{month}}"
-                    >
-                      {{month}}
-                    </ion-select-option>
-                  </ion-select>
-                  <div
-                    *ngIf="
-            (subscribeForm.get('month')?.invalid &&
-              subscribeForm.get('month')?.touched) ||
-            (subscribeForm.get('month')?.untouched && isSubmitted)
-          "
-                  >
-                    <div
-                      class="error"
-                      *ngIf="subscribeForm.controls['month']?.errors?.['required']"
-                    >
-                      <ion-text color="danger">Month is required.</ion-text>
-                    </div>
-                  </div>
-                </ion-col>
-                <ion-col>
-                  <ion-select placeholder="Year" formControlName="year">
-                    <ion-select-option
-                      *ngFor="let year of years"
-                      value="{{year}}"
-                    >
-                      {{year}}
-                    </ion-select-option>
-                  </ion-select>
-                  <div
-                    *ngIf="
-          (subscribeForm.get('year')?.invalid &&
-            subscribeForm.get('year')?.touched) ||
-          (subscribeForm.get('year')?.untouched && isSubmitted)
-        "
-                  >
-                    <div
-                      class="error"
-                      *ngIf="subscribeForm.controls['year']?.errors?.['required']"
-                    >
-                      <ion-text color="danger">Year is required.</ion-text>
-                    </div>
-                  </div>
-                </ion-col>
-              </ion-row>
-            </div>
-          </ion-col>
-        </ion-row>
+                  </ion-col>
+                </ion-row>
 
-        <ion-row>
-          <ion-col>
-            <div class="input-field">
-              <ion-label>Grade</ion-label>
-              <ion-select placeholder="e.g Grade 2" formControlName="grade">
-                <ion-select-option
-                  *ngFor="let grade of grades"
-                  value="{{grade}}"
-                >
-                  {{grade}}
-                </ion-select-option>
-              </ion-select>
-              <div
-                *ngIf="
-    (subscribeForm.get('grade')?.invalid &&
-      subscribeForm.get('grade')?.touched) ||
-    (subscribeForm.get('grade')?.untouched && isSubmitted)
-  "
-              >
-                <div
-                  class="error"
-                  *ngIf="subscribeForm.controls['grade']?.errors?.['required']"
-                >
-                  <ion-text color="danger">Grade is required.</ion-text>
+                <ion-row>
+                  <ion-col>
+                    <div class="input-field">
+                      <ion-label>Grade</ion-label>
+                      <ion-select
+                        placeholder="e.g Grade 2"
+                        formControlName="grade"
+                      >
+                        <ion-select-option
+                          *ngFor="let grade of grades"
+                          value="{{grade}}"
+                        >
+                          {{grade}}
+                        </ion-select-option>
+                      </ion-select>
+                      <div
+                        *ngIf="
+        (subscribeForm.get('grade')?.invalid &&
+          subscribeForm.get('grade')?.touched) ||
+        (subscribeForm.get('grade')?.untouched && isSubmitted)
+      "
+                      >
+                        <div
+                          class="error"
+                          *ngIf="subscribeForm.controls['grade']?.errors?.['required']"
+                        >
+                          <ion-text color="danger">Grade is required.</ion-text>
+                        </div>
+                      </div>
+                    </div>
+                  </ion-col>
+                </ion-row>
+
+                <div class="input-field">
+                  <ion-label>Gender</ion-label>
+                  <ion-row>
+                    <ion-col>
+                      <ion-checkbox
+                        formControlName="boy"
+                        justify="space-between"
+                        (ionChange)="selectGender($event,'boy')"
+                        >Boy</ion-checkbox
+                      >
+                    </ion-col>
+                    <ion-col>
+                      <ion-checkbox
+                        formControlName="girl"
+                        justify="space-between"
+                        (ionChange)="selectGender($event,'girl')"
+                        >Girl</ion-checkbox
+                      >
+                    </ion-col>
+                    <div
+                      *ngIf="
+      (subscribeForm.get('girl')?.invalid &&
+      subscribeForm.get('girl')?.touched) ||
+      (subscribeForm.get('girl')?.untouched && isSubmitted) || (subscribeForm.get('boy')?.invalid &&
+      subscribeForm.get('boy')?.touched) ||
+      (subscribeForm.get('boy')?.untouched && isSubmitted)
+      "
+                    >
+                      <div
+                        class="error"
+                        *ngIf="subscribeForm.controls['gender']?.errors?.['required']"
+                      >
+                        <ion-text color="danger">Gender is required.</ion-text>
+                      </div>
+                    </div>
+                  </ion-row>
                 </div>
               </div>
+            </div></ion-col
+          >
+          <ion-col class="ion-no-padding" col-12 col-xl-6 col-lg-6 col-md-6>
+            <div class="summary ion-padding">
+              <h2>Summary</h2>
+              <ion-text> to our Monthly Surprise Box </ion-text>
+              <div class="summary-box ion-padding">
+                <ion-row>
+                  <ion-col class="ion-text-start">
+                    <h6>Mystery Box</h6>
+                    <p>x 1</p>
+                  </ion-col>
+                  <ion-col class="ion-text-end">
+                    <h6><span>SAR</span> 456</h6>
+                    <p>Monthly</p>
+                  </ion-col>
+                </ion-row>
+              </div>
+              <div class="taxes">
+                <ion-row>
+                  <ion-col class="ion-text-start">
+                    <h6>Subtotal</h6>
+                  </ion-col>
+                  <ion-col class="ion-text-end">
+                    <h5><span>SAR</span> 456</h5>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col class="ion-text-start">
+                    <h6>Shipping</h6>
+                  </ion-col>
+                  <ion-col class="ion-text-end">
+                    <p>Free</p>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col class="ion-text-start">
+                    <h6>Taxes</h6>
+                  </ion-col>
+                  <ion-col class="ion-text-end">
+                    <h5><span>SAR</span> 4.0</h5>
+                  </ion-col>
+                </ion-row>
+              </div>
+              <div class="total">
+                <ion-row>
+                  <ion-col class="ion-text-start">
+                    <h6>Total</h6>
+                  </ion-col>
+                  <ion-col class="ion-text-end">
+                    <h5><span>SAR</span> 456</h5>
+                  </ion-col>
+                </ion-row>
+              </div>
+              <ion-button
+                type="submit"
+                color="subscribe-btn"
+                class="subscribe-btn"
+                size="large"
+                [disabled]="!subscribeForm.valid"
+                >Continue to payment</ion-button
+              >
             </div>
           </ion-col>
         </ion-row>
-
-        <div class="input-field">
-          <ion-label>Gender</ion-label>
-          <ion-row>
-            <ion-col>
-              <ion-checkbox
-                formControlName="boy"
-                justify="space-between"
-                (ionChange)="selectGender($event,'boy')"
-                >Boy</ion-checkbox
-              >
-            </ion-col>
-            <ion-col>
-              <ion-checkbox
-                formControlName="girl"
-                justify="space-between"
-                (ionChange)="selectGender($event,'girl')"
-                >Girl</ion-checkbox
-              >
-            </ion-col>
-            <div
-              *ngIf="
-  (subscribeForm.get('girl')?.invalid &&
-  subscribeForm.get('girl')?.touched) ||
-  (subscribeForm.get('girl')?.untouched && isSubmitted) || (subscribeForm.get('boy')?.invalid &&
-  subscribeForm.get('boy')?.touched) ||
-  (subscribeForm.get('boy')?.untouched && isSubmitted)
-  "
-            >
-              <div
-                class="error"
-                *ngIf="subscribeForm.controls['gender']?.errors?.['required']"
-              >
-                <ion-text color="danger">Gender is required.</ion-text>
-              </div>
-            </div>
-          </ion-row>
-        </div>
-      </div>
-      <div class="summary ion-padding">
-        <ion-title>Summary</ion-title>
-        <ion-text> to our Monthly Surprise Box </ion-text>
-        <div class="summary-box ion-padding">
-          <ion-row>
-            <ion-col class="ion-text-start">
-              <h6>Mystery Box</h6>
-              <p>x 1</p>
-            </ion-col>
-            <ion-col class="ion-text-end">
-              <h6><span>SAR</span> 456</h6>
-              <p>Monthly</p>
-            </ion-col>
-          </ion-row>
-        </div>
-        <div class="taxes">
-          <ion-row>
-            <ion-col class="ion-text-start">
-              <h6>Subtotal</h6>
-            </ion-col>
-            <ion-col class="ion-text-end">
-              <h5><span>SAR</span> 456</h5>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col class="ion-text-start">
-              <h6>Shipping</h6>
-            </ion-col>
-            <ion-col class="ion-text-end">
-              <p>Free</p>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col class="ion-text-start">
-              <h6>Taxes</h6>
-            </ion-col>
-            <ion-col class="ion-text-end">
-              <h5><span>SAR</span> 4.0</h5>
-            </ion-col>
-          </ion-row>
-        </div>
-        <div class="total">
-          <ion-row>
-            <ion-col class="ion-text-start">
-              <h6>Total</h6>
-            </ion-col>
-            <ion-col class="ion-text-end">
-              <h5><span>SAR</span> 456</h5>
-            </ion-col>
-          </ion-row>
-        </div>
-        <ion-button
-          type="submit"
-          color="subscribe-btn"
-          class="subscribe-btn"
-          size="large"
-          [disabled]="!subscribeForm.valid"
-          >Continue to payment</ion-button
-        >
-      </div>
+      </ion-grid>
     </form>
   </div>
 

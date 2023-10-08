@@ -1,7 +1,7 @@
 <ion-footer>
-  <ion-title> Logo </ion-title>
+  <ion-title class="title"> Logo </ion-title>
 
-  <ion-list lines="none">
+  <ion-list lines="none" class="links">
     <ion-item *ngFor="let link of links">
       <a href="{{ link?.path }}">{{ link?.name }}</a>
     </ion-item>
@@ -54,7 +54,7 @@
     >
   </form>
   <section class="footer-pages">
-    <ion-list lines="none">
+    <ion-list lines="none" class="pagesLink">
       <ion-item *ngFor="let item of pagesLink">
         <a (click)="goToPage(item?.bath)">{{ item?.name }}</a>
       </ion-item>
